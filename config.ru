@@ -18,4 +18,5 @@ end
 
 faye_server = Faye::RackAdapter.new(:mount => '/faye', :timeout => 45)
 faye_server.add_extension(ServerAuth.new)
+faye_server.setHeader('Access-Control-Allow-Origin', '*');
 run faye_server
